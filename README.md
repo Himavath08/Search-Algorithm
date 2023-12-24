@@ -19,31 +19,104 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
-
-
+''' 
+Program for linear search method to match the item in a list
+Developed by:M HIMAVATH
+RegisterNumber: 23010121
+'''
+def linearSearch(array,n,k):
+    array.sort()
+    for i in range(0,n):
+        if array[i]==k:
+            return i
+    return -1 
+array =eval(input())
+k=eval(input())
+n=len(array)
+result=linearSearch(array,n,k)
+if (result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
+    
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
+'' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by:M Himavath
+RegisterNumber: 23010121
+'''
+def binarySearchIter(array, k, low, high):
+    while low<=high:
+        mid=low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+    
+array = eval(input())
+array.sort()
+k = eval(input()) 
+result=binarySearchIter(array,k,0,len(array)-1)
+if (result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
+    
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by:M Himavath
+RegisterNumber: 23010121
+'''
+def BinarySearch(arr, k, low, high):
+    if high>=low:
+        mid=low+(high-low)//2
+        if arr[mid]==k:
+            return mid
+        elif arr[mid]>k:
+            return BinarySearch(arr,k,low,mid-1)
+        else:
+            return BinarySearch(arr,k,mid+1,high)
+    else:        
+        return -1
+    
+arr = eval(input())
+arr.sort()
+k = eval(input()) 
+result=BinarySearch(arr,k,0,len(arr)-1)
+if result==-1:
+    print(arr)
+    print("Element not found")
+else:
+    print(arr)
+    print("Element found at index: ",result)
+    
 ```
 ## Sample Input and Output
+1)
+
+![Screenshot 2023-12-25 005426](https://github.com/Himavath08/Search-Algorithm/assets/139110631/41eeb634-264f-4524-8f41-f0d84ff644b4)
+
+2)
 
 
+![Screenshot 2023-12-25 005506](https://github.com/Himavath08/Search-Algorithm/assets/139110631/7d359dc9-e39d-4d0b-a697-629b4a3eaa23)
 
+3)
 
+![Screenshot 2023-12-25 005518](https://github.com/Himavath08/Search-Algorithm/assets/139110631/016a3dd3-e2cf-467d-8ed4-50e53b104afc)
 
 
 ## Result
